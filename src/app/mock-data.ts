@@ -26,4 +26,22 @@ export const EVENTS: Event[] = [
         type: EventType.NEWS,
         date: moment().valueOf(),
     } as NewsEvent,
+    {
+        id: 4,
+        amount: 1000,
+        currency: 'руб',
+        from: 'Заказчик 1',
+        description: 'Описание транзакции',
+        type: EventType.TRANSACTION,
+        date: moment().valueOf(),
+    } as TransactionEvent,
+    {
+        id: 5,
+        amount: -5000,
+        currency: 'руб',
+        from: 'Потребитель 1',
+        description: 'Описание транзакции 2',
+        type: EventType.TRANSACTION,
+        date: moment().valueOf(),
+    } as TransactionEvent,
 ];

@@ -1,6 +1,9 @@
-<div class="news-row">
+<div
+        class="news-row"
+        [class.readed]="event.haveRead"
+        routerLink="/event/{{event.id}}">
     <div class="news-row__title">
-        <a routerLink="/event/{{event.id}}">{{ event.title }}</a>
+        {{ event.title }}
     </div>
     <div class="news-row__date">
         {{ event.date | date:"dd.MM.yyyy HH:mm:ss" }}

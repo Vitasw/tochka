@@ -47,13 +47,22 @@ export class EventService {
     }
 
     haveReadNews(id: number): Observable<boolean> {
-        const fEvent: NewsEvent = this.events.find(e => e.id === event.id);
+        const fEvent: Event = this.events.find(e => e.id === id);
         if (fEvent) {
-            fEvent.haveRead = true;
+            (fEvent as NewsEvent).haveRead = true;
             return of(true);
         } else {
             return of(false);
         }
+    }
+
+    removeTransaction(id: number): Observable<boolean> {
+        const event = this.events.find(t => t.id === id);
+        if (event) {
+            this.events.splice(this.events.indexOf(event), 1);
+            return of(true);
+        }
+        return of(false);
     }
 
 }

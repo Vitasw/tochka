@@ -24,7 +24,7 @@ export class NewsEventViewComponent implements OnInit {
     read(): void {
         if (this.event.title.trim()) {
             this.eventService
-                .haveReadNews(event.id)
+                .haveReadNews(this.event.id)
                 .subscribe(status => {
                     if (status) {
                         this.event.haveRead = true;

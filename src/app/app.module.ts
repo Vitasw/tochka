@@ -11,6 +11,7 @@ import { TransactionEventRowComponent } from './transaction-event-row/transactio
 import { AppRoutingModule } from './app-routing.module';
 import { EventViewComponent } from './event-view/event-view.component';
 import { NewsEventViewComponent } from './news-event-view/news-event-view.component';
+import { TransactionEventViewComponent } from './transaction-event-view/transaction-event-view.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { NewsEventViewComponent } from './news-event-view/news-event-view.compon
         NewsEventRowComponent,
         TransactionEventRowComponent,
         EventViewComponent,
-        NewsEventViewComponent
+        NewsEventViewComponent,
+        TransactionEventViewComponent
     ],
     imports: [
         BrowserModule,

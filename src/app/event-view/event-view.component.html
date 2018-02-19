@@ -1,4 +1,4 @@
-<div [ngSwitch]="event.type">
+<ng-container [ngSwitch]="event.type">
   <app-news-event-view *ngSwitchCase="EventType.NEWS" [event]="event"></app-news-event-view>
-  <app-transaction-event-row *ngSwitchCase="EventType.TRANSACTION" [event]="event"></app-transaction-event-row>
-</div>
+  <app-transaction-event-view *ngSwitchCase="EventType.TRANSACTION" [event]="event"></app-transaction-event-view>
+</ng-container>

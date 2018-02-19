@@ -4,7 +4,7 @@ import { NewsEvent } from '../news-event';
 @Component({
     selector: 'app-news-event-row',
     templateUrl: './news-event-row.component.html',
-    styleUrls: ['./news-event-row.component.css']
+    styleUrls: ['./news-event-row.component.less']
 })
 export class NewsEventRowComponent implements OnInit {
 
