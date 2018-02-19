@@ -1,15 +1,15 @@
 <div
-        routerLink="/event/{{event.id}}"
         class="transaction-row"
+        routerLink="/event/{{event.id}}"
         [class.incoming]="event.amount>=0"
         [class.outgoing]="event.amount<0">
     <div class="transaction-row__amount">
         {{ event.amount }} {{ event.currency }}
     </div>
-    <div class="transaction-row__from">
-        {{ event.from }}
-    </div>
     <div class="transaction-row__date">
         {{ event.date | date:"dd.MM.yyyy HH:mm:ss" }}
+    </div>
+    <div class="transaction-row__from">
+        {{ event.from }}
     </div>
 </div>

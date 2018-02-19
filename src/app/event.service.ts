@@ -31,7 +31,6 @@ export class EventService {
 
     addEvent(event: Event): Observable<boolean> {
         event.id = ++this.lastId;
-        event.date = Date.now();
         this.events.push(event);
         return of(true);
     }

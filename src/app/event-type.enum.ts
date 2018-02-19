@@ -1,4 +1,4 @@
 export enum EventType {
-    NEWS,
-    TRANSACTION,
+    NEWS = 'NEWS',
+    TRANSACTION = 'TRANSACTION',
 }

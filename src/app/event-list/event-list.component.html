@@ -1,3 +1,4 @@
-<div *ngFor="let event of events">
+<button routerLink="/add">Добавить событие</button>
+<ng-container *ngFor="let event of events">
     <app-event-row [event]="event"></app-event-row>
-</div>
+</ng-container>

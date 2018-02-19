@@ -1,0 +1,25 @@
+<div class="add-form">
+    <div class="add-form__row">
+        <label>Сумма</label>
+        <input type="number" min="0" max="10000" step="0.01" [(ngModel)]="event.amount">
+    </div>
+    <div class="add-form__row">
+        <label>Валюта</label>
+        <input [(ngModel)]="event.currency">
+    </div>
+    <div class="add-form__row">
+        <label>От кого</label>
+        <input [(ngModel)]="event.from">
+    </div>
+    <div class="add-form__row">
+        <label>Описание</label>
+        <input [(ngModel)]="event.description">
+    </div>
+    <div class="add-form__row">
+        <label>Дата</label>
+        <input [(ngModel)]="formatDate" type="datetime-local">
+    </div>
+    <div class="add-form__row">
+        <button (click)="$event.preventDefault(); add()">Добавить</button>
+    </div>
+</div>

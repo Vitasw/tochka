@@ -1,0 +1,17 @@
+<div class="add-form">
+    <div class="add-form__row">
+        <label>Заголовок</label>
+        <input [(ngModel)]="event.title">
+    </div>
+    <div class="add-form__row">
+        <label>Описание</label>
+        <textarea rows="5" [(ngModel)]="event.body"></textarea>
+    </div>
+    <div class="add-form__row">
+        <label>Дата</label>
+        <input [(ngModel)]="formatDate" type="datetime-local">
+    </div>
+    <div class="add-form__row">
+        <button (click)="$event.preventDefault(); add()">Добавить</button>
+    </div>
+</div>

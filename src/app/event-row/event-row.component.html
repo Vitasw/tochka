@@ -1,4 +1,8 @@
 <ng-container [ngSwitch]="event.type">
-    <app-news-event-row *ngSwitchCase="EventType.NEWS" [event]="event"></app-news-event-row>
-    <app-transaction-event-row *ngSwitchCase="EventType.TRANSACTION" [event]="event"></app-transaction-event-row>
+    <app-news-event-row
+            *ngSwitchCase="EventType.NEWS"
+            [event]="event"></app-news-event-row>
+    <app-transaction-event-row
+            *ngSwitchCase="EventType.TRANSACTION"
+            [event]="event"></app-transaction-event-row>
 </ng-container>
