@@ -1,0 +1,17 @@
+<div class="task">
+    <h3 class="task__id">Задача №{{ event.id }}</h3>
+    <div class="task__date">
+        <strong>Дата: </strong>{{ event.date | date:"dd.MM.yyyy HH:mm:ss" }}
+    </div>
+    <div class="task__title">
+        <strong>Заголовок: </strong>{{ event.title }}
+    </div>
+    <div class="task__desciption">
+        <strong>Описание: </strong>{{ event.body }}
+    </div>
+</div>
+<div class="edit-form__row" *ngIf="event.haveRead">
+    <button (click)="$event.preventDefault(); read()">Ознакомлен</button>
+</div>
+<br/>
+<a routerLink="/events">Вернуться к списку задач</a>
