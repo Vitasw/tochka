@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NewsEvent } from '../news-event';
+import { NewsEvent } from '../../news-event';
 
 @Component({
     selector: 'app-news-event-row',

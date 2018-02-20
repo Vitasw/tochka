@@ -6,13 +6,13 @@ import {EventType} from '../event-type.enum';
 @Component({
     selector: 'app-event-list',
     templateUrl: './event-list.component.html',
-    styleUrls: ['./event-list.component.css']
+    styleUrls: ['./event-list.component.less']
 })
 export class EventListComponent implements OnInit {
 
     events: Event[] = EVENTS;
 
-    selectedTypeFilter: string;
+    selectedEventTypeFilter: string;
 
     filterEvents = Object.keys(EventType);
 
@@ -23,12 +23,7 @@ export class EventListComponent implements OnInit {
     }
 
     selectEventType(eventType) {
-        this.selectedTypeFilter = eventType;
-        this.events.sort((a,b) => {
-            if (a.type === this.selectedTypeFilter) {
-                return 1;
-            }
-        });
+        this.selectedEventTypeFilter = eventType;
     }
 
 }

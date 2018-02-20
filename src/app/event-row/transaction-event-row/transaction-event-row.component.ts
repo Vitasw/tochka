@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TransactionEvent} from '../transaction-event';
+import {TransactionEvent} from '../../transaction-event';
 
 
 @Component({

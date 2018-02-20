@@ -1,0 +1,18 @@
+<div class="news-event">
+    <h2 class="news-event__title">
+        {{ event.title }}
+    </h2>
+    <div class="news-event__date">
+        {{ event.date | date:"dd.MM.yyyy HH:mm:ss" }}
+    </div>
+    <div class="news-event__body">
+        {{ event.body }}
+    </div>
+    <div class="news-event__read">
+        <button class="news_event__read-btn" *ngIf="!event.haveRead; else elseBlock" (click)="$event.preventDefault(); read()">Ознакомлен</button>
+        <ng-template #elseBlock>
+            <span class="news-event__have-read">Ознакомлен</span>
+        </ng-template>
+    </div>
+</div>
+<a routerLink="/events">Вернуться к списку событий</a>

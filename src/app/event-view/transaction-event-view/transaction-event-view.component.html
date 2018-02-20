@@ -1,0 +1,19 @@
+<div class="transaction-event">
+    <h3 class="transaction-event__id">Транзакция №{{ event.id }}</h3>
+    <div class="transaction-event__row transaction-event__amount">
+        <strong>Сумма: </strong>{{ event.amount }} {{ event.currency }}
+    </div>
+    <div class="transaction-event__row transaction-event__from">
+        <strong>От кого: </strong>{{ event.from }}
+    </div>
+    <div class="transaction-event__row transaction-event__description">
+        <strong>Описание: </strong>{{ event.description }}
+    </div>
+    <div class="transaction-event__row transaction-event__date">
+        <strong>Дата: </strong>{{ event.date | date:"dd.MM.yyyy HH:mm:ss" }}
+    </div>
+    <div class="transaction-event__row">
+        <button class="transaction-event__remove-btn" (click)="$event.preventDefault(); remove()">Удалить</button>
+    </div>
+</div>
+<a routerLink="/events">Вернуться к списку событий</a>

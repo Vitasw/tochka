@@ -1,12 +1,13 @@
-<button routerLink="/add">Добавить событие</button>
+<button routerLink="/add" class="add-btn">Добавить событие</button>
 
 <div class="type-filter">
     <span>Фильтровать по:</span>
-    <select (change)="selectEventType($event.target.value)">
+    <select class="type-filter__select" (change)="selectEventType($event.target.value)">
+        <option value="">---</option>
         <option *ngFor="let value of filterEvents" value={{value}}>{{value}}</option>
     </select>
 </div>
 
 <ng-container *ngFor="let event of events">
-    <app-event-row [event]="event"></app-event-row>
+    <app-event-row *ngIf="!selectedEventTypeFilter || event.type == selectedEventTypeFilter" [event]="event"></app-event-row>
 </ng-container>
