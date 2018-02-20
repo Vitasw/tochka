@@ -1,17 +1,23 @@
 <div class="add-form">
     <div class="add-form__row">
         <label>Заголовок</label>
-        <input [(ngModel)]="event.title">
+        <input [(ngModel)]="event.title" #titleField="ngModel" required>
+        <div [hidden]="titleField.valid || titleField.untouched" class="error">
+            Не указан заголовок
+        </div>
     </div>
     <div class="add-form__row">
         <label>Описание</label>
-        <textarea rows="5" [(ngModel)]="event.body"></textarea>
+        <textarea rows="5" [(ngModel)]="event.body" #bodyField="ngModel" required></textarea>
+        <div [hidden]="bodyField.valid || bodyField.untouched" class="error">
+            Не указан текст новости
+        </div>
     </div>
     <div class="add-form__row">
         <label>Дата</label>
         <input [(ngModel)]="formatDate" type="datetime-local">
     </div>
     <div class="add-form__row">
-        <button (click)="$event.preventDefault(); add()">Добавить</button>
+        <button [disabled]="titleField.invalid || bodyField.invalid" (click)="$event.preventDefault(); add()">Добавить</button>
     </div>
 </div>

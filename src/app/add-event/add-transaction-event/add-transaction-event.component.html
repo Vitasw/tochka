@@ -1,25 +1,37 @@
 <div class="add-form">
     <div class="add-form__row">
         <label>Сумма</label>
-        <input type="number" min="0" max="10000" step="0.01" [(ngModel)]="event.amount">
+        <input type="number" step="0.01" [(ngModel)]="event.amount" #amountField="ngModel" required pattern="-?\d+(\.\d+)?">
+        <div [hidden]="amountField.valid || amountField.untouched" class="error">
+            Сумма не указана или указана неверно
+        </div>
     </div>
     <div class="add-form__row">
         <label>Валюта</label>
-        <input [(ngModel)]="event.currency">
+        <input [(ngModel)]="event.currency" #curField="ngModel" required>
+        <div [hidden]="curField.valid || curField.untouched" class="error">
+            Не указана валюта
+        </div>
     </div>
     <div class="add-form__row">
         <label>От кого</label>
-        <input [(ngModel)]="event.from">
+        <input [(ngModel)]="event.from" #fromField="ngModel" required>
+        <div [hidden]="fromField.valid || fromField.untouched" class="error">
+            Не указано от кого поступление
+        </div>
     </div>
     <div class="add-form__row">
         <label>Описание</label>
-        <input [(ngModel)]="event.description">
+        <input [(ngModel)]="event.description" #descField="ngModel" required>
+        <div [hidden]="descField.valid || descField.untouched" class="error">
+            Не заполнено описание транзакции
+        </div>
     </div>
     <div class="add-form__row">
         <label>Дата</label>
         <input [(ngModel)]="formatDate" type="datetime-local">
     </div>
     <div class="add-form__row">
-        <button (click)="$event.preventDefault(); add()">Добавить</button>
+        <button [disabled]="amountField.invalid || curField.invalid || fromField.invalid || descField.invalid" (click)="$event.preventDefault(); add()">Добавить</button>
     </div>
 </div>
