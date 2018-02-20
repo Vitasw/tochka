@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import {Event} from '../event';
-import {EventType} from '../event-type.enum';
-import {EventService} from '../event.service';
+import { Event } from '../event';
+import { EventType } from '../event-type.enum';
+import { EventService } from '../event.service';
 
 @Component({
     selector: 'app-event-view',
     templateUrl: './event-view.component.html',
-    styleUrls: ['./event-view.component.css']
+    styleUrls: ['./event-view.component.less']
 })
 export class EventViewComponent implements OnInit {
 
@@ -18,8 +18,7 @@ export class EventViewComponent implements OnInit {
 
     constructor(
         private eventService: EventService,
-        private activatedRoute: ActivatedRoute,
-    ) { }
+        private activatedRoute: ActivatedRoute) { }
 
     ngOnInit() {
         this.getEvent();

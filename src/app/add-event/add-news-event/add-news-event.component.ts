@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {NewsEvent} from '../../news-event';
+import { Component, OnInit } from '@angular/core';
+import { NewsEvent } from '../../news-event';
 import * as moment from 'moment';
-import {EventService} from '../../event.service';
-import {Router} from '@angular/router';
-import {EventType} from '../../event-type.enum';
+import { EventService } from '../../event.service';
+import { Router } from '@angular/router';
+import { EventType } from '../../event-type.enum';
 
 @Component({
     selector: 'app-add-news-event',
@@ -15,10 +15,8 @@ export class AddNewsEventComponent implements OnInit {
     event: NewsEvent;
     formatDate: string;
 
-    constructor(
-        private eventService: EventService,
-        private router: Router,
-    ) {
+    constructor(private eventService: EventService,
+                private router: Router) {
         this.event = new NewsEvent();
         this.event.type = EventType.NEWS;
         this.event.date = moment().valueOf();

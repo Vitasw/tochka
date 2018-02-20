@@ -13,6 +13,7 @@ export class EventListComponent implements OnInit {
     events: Event[] = EVENTS;
 
     sortField = 'date';
+
     sortDirection = false;
 
     constructor() {

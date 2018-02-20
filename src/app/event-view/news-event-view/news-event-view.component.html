@@ -9,7 +9,9 @@
         {{ event.body }}
     </div>
     <div class="news-event__read">
-        <button class="news_event__read-btn" *ngIf="!event.haveRead; else elseBlock" (click)="$event.preventDefault(); read()">Ознакомлен</button>
+        <button class="news_event__read-btn" *ngIf="!event.haveRead; else elseBlock"
+                (click)="$event.preventDefault(); read()">Ознакомлен
+        </button>
         <ng-template #elseBlock>
             <span class="news-event__have-read">Ознакомлен</span>
         </ng-template>

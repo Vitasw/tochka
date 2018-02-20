@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {Event} from '../event';
-import {EventType} from '../event-type.enum';
-import {EventService} from '../event.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Event } from '../event';
+import { EventType } from '../event-type.enum';
+import { EventService } from '../event.service';
 
 @Component({
     selector: 'app-add-event',
@@ -13,9 +13,7 @@ export class AddEventComponent implements OnInit {
 
     event: Event;
 
-    events: Array<string>;
-
-    EventType = Object.assign({}, EventType);
+    eventTypes: Array<string>;
 
     selectedEventType: string = EventType.NEWS;
 
@@ -23,14 +21,10 @@ export class AddEventComponent implements OnInit {
         private eventService: EventService,
         private router: Router,
     ) {
-        this.events = this.keys();
+        this.eventTypes = Object.keys(Object.assign({}, EventType));
     }
 
     ngOnInit() {
-    }
-
-    keys(): Array<string> {
-        return Object.keys(EventType);
     }
 
     selectEventType(eventType) {

@@ -1,5 +1,5 @@
-import {EventType} from './event-type.enum';
-import {Event} from './event';
+import { EventType } from './event-type.enum';
+import { Event } from './event';
 
 export class TransactionEvent implements Event {
     id: number;

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { Event } from './event';
 import { EVENTS } from './mock-data';
-import {NewsEvent} from './news-event';
+import { NewsEvent } from './news-event';
 
 @Injectable()
 export class EventService {

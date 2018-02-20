@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {TransactionEvent} from '../../transaction-event';
+import { Component, OnInit } from '@angular/core';
+import { TransactionEvent } from '../../transaction-event';
 import * as moment from 'moment';
-import {EventService} from '../../event.service';
-import {Router} from '@angular/router';
-import {EventType} from '../../event-type.enum';
+import { EventService } from '../../event.service';
+import { Router } from '@angular/router';
+import { EventType } from '../../event-type.enum';
 
 @Component({
     selector: 'app-add-transaction-event',

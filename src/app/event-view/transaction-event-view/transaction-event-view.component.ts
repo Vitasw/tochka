@@ -14,8 +14,7 @@ export class TransactionEventViewComponent implements OnInit {
 
     constructor(
         private eventService: EventService,
-        private router: Router,
-    ) { }
+        private router: Router) { }
 
     ngOnInit() {
     }
