@@ -12,9 +12,8 @@ export class EventListComponent implements OnInit {
 
     events: Event[] = EVENTS;
 
-    selectedEventTypeFilter: string;
-
-    filterEvents = Object.keys(EventType);
+    sortField = 'date';
+    sortDirection = false;
 
     constructor() {
     }
@@ -22,8 +21,32 @@ export class EventListComponent implements OnInit {
     ngOnInit() {
     }
 
-    selectEventType(eventType) {
-        this.selectedEventTypeFilter = eventType;
+    setSortField(type: string) {
+        if (this.sortField === type) {
+            this.sortDirection = !this.sortDirection;
+        } else {
+            this.sortDirection = false;
+            this.sortField = type;
+        }
+        this.sortEvents();
+    }
+
+    sortEvents() {
+        this.events.sort((a: Event, b: Event) => {
+            let result: number;
+            if (a[this.sortField] > b[this.sortField]) {
+                result = 1;
+            } else if (a[this.sortField] < b[this.sortField]) {
+                result = -1;
+            } else {
+                result = 0;
+            }
+
+            if (this.sortDirection) {
+                result = result * (-1);
+            }
+            return result;
+        });
     }
 
 }

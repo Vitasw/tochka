@@ -1,13 +1,27 @@
 <button routerLink="/add" class="add-btn">Добавить событие</button>
 
-<div class="type-filter">
-    <span>Фильтровать по:</span>
-    <select class="type-filter__select" (change)="selectEventType($event.target.value)">
-        <option value="">---</option>
-        <option *ngFor="let value of filterEvents" value={{value}}>{{value}}</option>
-    </select>
+<div class="sort-block">
+    <span class="sort-block__title">Сортировать по</span>
+    <span class="sort-block__date" (click)="setSortField('date')">
+        дате
+        <ng-container *ngIf="sortField==='date'">
+            <i *ngIf="sortDirection; else elseDateBlock" class="far fa-arrow-alt-circle-up"></i>
+            <ng-template #elseDateBlock>
+                <i class="far fa-arrow-alt-circle-down"></i>
+            </ng-template>
+        </ng-container>
+    </span>
+    <span class="sort-block__event-type" (click)="setSortField('type')">
+        типу события
+        <ng-container *ngIf="sortField==='type'">
+            <i *ngIf="sortDirection; else elseEventBlock" class="far fa-arrow-alt-circle-up"></i>
+            <ng-template #elseEventBlock >
+                <i class="far fa-arrow-alt-circle-down"></i>
+            </ng-template>
+        </ng-container>
+    </span>
 </div>
 
 <ng-container *ngFor="let event of events">
-    <app-event-row *ngIf="!selectedEventTypeFilter || event.type == selectedEventTypeFilter" [event]="event"></app-event-row>
+    <app-event-row [event]="event"></app-event-row>
 </ng-container>

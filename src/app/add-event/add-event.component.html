@@ -1,7 +1,9 @@
 <h3>Новое событие</h3>
-<select (change)="selectEventType($event.target.value)">
-    <option *ngFor="let value of events" value={{value}}>{{value}}</option>
-</select>
+<div class="event-select">
+    <select (change)="selectEventType($event.target.value)">
+        <option *ngFor="let value of events" value={{value}}>{{value}}</option>
+    </select>
+</div>
 <ng-container [ngSwitch]="selectedEventType">
     <app-add-news-event *ngSwitchCase="EventType.NEWS"></app-add-news-event>
     <app-add-transaction-event *ngSwitchCase="EventType.TRANSACTION"></app-add-transaction-event>
